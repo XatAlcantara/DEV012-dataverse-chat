@@ -13,7 +13,7 @@ export const HomeLayout = () => {
     const ul = document.createElement("ul");
 
       // Función para renderizar tarjetas
-      const renderCards = (drivers) => {
+      const renderPilotos = (drivers) => {
         ul.innerHTML = '';
         drivers.forEach((driver) => {
             ul.appendChild(Piloto(driver));
@@ -22,7 +22,7 @@ export const HomeLayout = () => {
 
     // Inicializar con todos los datos
     let currentData = [...data];
-    renderCards(currentData);
+    renderPilotos(currentData);
 
     container.append(Header(), Menu(), Estadisticas(), ul, Footer());
 
@@ -30,7 +30,7 @@ export const HomeLayout = () => {
     const ordenar = container.querySelector('#sort-order');
     ordenar.addEventListener('change', (e) => {
         const dataOrdenada = sortData(currentData, 'name', e.target.value);
-        renderCards(dataOrdenada);
+        renderPilotos(dataOrdenada);
         updateStats(dataOrdenada);
     });
 
@@ -44,7 +44,7 @@ export const HomeLayout = () => {
             currentData = filterData(data, "lastTeam", selectedValue);
         }
         const dataOrdenada = sortData(currentData, ordenar.value);
-        renderCards(dataOrdenada);
+        renderPilotos(dataOrdenada);
         updateStats(dataOrdenada);
     });
 

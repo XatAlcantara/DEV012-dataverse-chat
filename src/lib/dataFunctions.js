@@ -13,9 +13,7 @@ export const filterData = (data, filterBy, value) => {
 export function sortData(data, sortBy, sortOrder) {
   // Realiza una copia superficial de los datos para no afectar el array original
   return data.slice().sort((a, b) => {
-    // Si se está ordenando por "name"
     if (sortBy === "name") {
-      // Ordena alfabéticamente de manera ascendente o descendente según el sortOrder
       return sortOrder === "asc" ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name);
     }
     // Si no se está ordenando por "name", no se realiza ninguna modificación
