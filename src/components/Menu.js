@@ -1,14 +1,16 @@
-export const div_filtros = () => {
-    const asideMenu = document.createElement("aside");
-    asideMenu.setAttribute("id", "asideMenu");
-    const div = document.createElement("div");
-    div.setAttribute("id", "filtros");
+import { navigateTo } from "../router.js";
+import Button from "./Buttons.js"; 
+
+const menu = () => {
+    const aside = document.createElement("aside");
+    aside.classList.add(menu);
+    aside.innerHTML= `
+
   
-    //CREACIÓN DE FILTROS
-    div.innerHTML = `
+    <div class="Labels"></div>
     <label for="select-filter">Filtra por:</label>
     <select id="select-filter" data-testid="select-filter" name="lastTeam">
-<option value="Todos">Escuderias</option>
+              <option value="Todos">Escuderias</option>
               <option value="Alfa Romeo Racing">Alfa Romeo Racing</option>
               <option value="AlphaTauri">AlphaTauri</option>
               <option value="Alpine">Alpine</option>
@@ -29,7 +31,7 @@ export const div_filtros = () => {
               <option value="Williams">Williams</option>
             </select>
 
-            <!-- Ordenar solo de forma ascendente y descendente -->
+
             <label for="sort-order"> Ordenar: </label>
             <select id="sort-order" data-testid="select-sort" name="name">
               <option value="nonOrder">Sin ordenar</option>
@@ -37,10 +39,16 @@ export const div_filtros = () => {
               <option value="desc">Z - A</option>
             </select>
 
-            <button data-testid="button-clear">Eliminar</button>`;
+            <button data-testid="button-clear">Eliminar</button>
+            </div>
+            
+            <div class= "Butones">
+            ${Button(nav).outerHTML}
+            </div>`;
   
-    asideMenu.appendChild(label);
-    asideMenu.appendChild(div);
   
-    return asideMenu;
-  };
+    return aside;
+  }
+
+
+export default menu;

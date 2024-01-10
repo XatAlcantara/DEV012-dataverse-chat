@@ -1,35 +1,19 @@
 // En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
-import PanelLayout from "./views/PanelLayout.js";
-/*
-import Example from './views/Example.js';
+//Importar las diferentes carpetas y funciones que tenemos en Views 
+import {Home} from './views/HomeLayout.js';
+import {ApyKey} from './views/ApyKey.js';
+import {Error404} from './views/Error404.js';
+import {Piloto} from './views/Piloto.js';
 
-Ejemplo de definición de rutas:
-
-const routes = {
-    "/": PanelLayout,
-    ...
-}
-*/
-
-/*
-TODO:
-1.- Definir rutas en router.
-2.- Pasar "root element" a router.
-3.- Invocar el router para renderizar la vista correcta.
-*/
-import HomeLayout from "./views/HomeLayout.js";
+//Importar las funciones que tenemos ene l router.js
 import { setRootElement, setRoutes, onURLChange } from "./router.js";
-//import { Error404 } from "./views/Error404.js";
-//import { description } from "./views/Description.js";
-//import { chatView } from "./views/Chat.js";
-//import { valorInput } from "./views/apikey.js";
 
+//Debemos definir las vistas asociadas a cada carpeta que mencionamos en views 
 const routes = {
-  "/": HomeLayout,
- // "/Error404": Error404,
-  //"/description": description,
-  //"/panel": chatView,
-  //"/apikey": valorInput,
+  "/": Home,
+ "/error404": Error404,
+  "/apykey": ApyKey,
+  "/piloto": Piloto,
 };
 
 const viewContainer = document.getElementById("root");
@@ -44,6 +28,3 @@ document.addEventListener("DOMContentLoaded", (event) => {
 window.addEventListener("popstate", () => {
   onURLChange(window.location.pathname);
 });
-
-document.getElementById('root').append(HomeLayout())
-// document.getElementById('root').append(PanelLayout())

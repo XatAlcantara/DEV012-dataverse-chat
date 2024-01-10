@@ -7,16 +7,15 @@ export const setRootElement = (newRouteElementValue) => {
 };
 
 export const setRoutes = (newRoutesValue) => {
-  // Opcional: Lanzar errores si `newRoutesValue` no es un objeto
+  // optional Throw errors if routes isn't an object
   if (typeof newRoutesValue === "object") {
     if (newRoutesValue["/NotFound"]) {
       ROUTES = newRoutesValue;
     }
   }
 };
-
 const renderView = (pathname, props = {}) => {
-  // Limpiar el elemento raíz
+  // clear the root element
   const root = rootElement;
   root.innerHTML = "";
   const urlParams = new URLSearchParams(window.location.search);
@@ -31,7 +30,7 @@ const renderView = (pathname, props = {}) => {
 };
 
 export const navigateTo = (pathname, props = {}) => {
-  // Actualizar el historial del navegador con pushState
+  // update window history with pushState
   let URLvisited = window.location.origin + pathname;
   if (props.id) {
     URLvisited += `?id=${props.id}`;
@@ -41,8 +40,10 @@ export const navigateTo = (pathname, props = {}) => {
 };
 
 export const onURLChange = (location) => {
-  // Analizar la ubicación para obtener la ruta y los parámetros de búsqueda
-  // Convertir los parámetros de búsqueda a un objeto
-  // Renderizar la vista con la ruta y el objeto
+  // const sitioVisitado= window.location.origin + pathname;
+
+  // parse the location for the pathname and search params
+  // convert the search params to an object
+  // render the view with the pathname and object
   renderView(location);
 };

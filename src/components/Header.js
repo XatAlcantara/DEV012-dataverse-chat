@@ -1,24 +1,24 @@
 
 import { navigateTo } from "../router.js";
 
-export const header = () => {
+export const Header = () => {
 
-  const header = document.createElement('header');
-
-  const icono1 = document.createElement('i');
-  icono1.setAttribute('id', 'header');
-  icono1.classList.add('fas', 'fa-house'); // Cambiado a tu clase de Font Awesome para la casa
+      const header = document.createElement("Header");
+    
+      header.classList.add("Header");
+      header.innerHTML = `
+          <img src="./images/LOGOS-1_1200x1200-PhotoRoom.png class="logo">
+          <h1 class="title">F1'Verse</h1>
+          <i class="fa-solid fa-house"></i>
+      `;
   
-  const imagen1 = document.createElement('img');
-  imagen1.setAttribute('src', 'src/images/LOGOS-1_1200x1200-PhotoRoom.png'); // Reemplaza con la ruta de tu imagen
-  imagen1.setAttribute('alt', 'Logo formula 1'); // Puedes agregar un texto alternativo para accesibilidad
-
-  icono1.addEventListener('click', function () {
-    navigateTo('/');
-  });
+      const logo = header.querySelector('.logo');
+      logo.addEventListener("click", function() {
+          const pageInit = `/`; 
+          navigateTo(pageInit); 
+      });
   
-  header.appendChild(icono1);
-  header.appendChild(imagen1);
+      return header;
+  } 
   
-  return header;
-};
+  export default Header;

@@ -2,7 +2,7 @@ import Piloto from "../components/Piloto.js";
 import data from "../data/dataset.js";
 import { Header } from "../components/Header.js";
 import { Footer } from "../components/Footer.js";
-import { div_filtros } from "../components/Filtros.js";
+import { div_filtros } from "../components/Menu.js";
 import { filterData, sortData, computeStats } from "../lib/dataFunctions.js";
 import { navigateTo } from "../router.js";
 
