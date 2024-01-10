@@ -1,11 +1,10 @@
 import { navigateTo } from "../router.js";
-import Button from "./Buttons.js"; 
+import Button from "./Botones.js"; 
 
-const menu = () => {
+const Menu = () => {
     const aside = document.createElement("aside");
     aside.classList.add(menu);
     aside.innerHTML= `
-
   
     <div class="Labels"></div>
     <label for="select-filter">Filtra por:</label>
@@ -45,10 +44,17 @@ const menu = () => {
             <div class= "Butones">
             ${Button(nav).outerHTML}
             </div>`;
-  
+
+
+            const apikeyButton = nav.querySelector('.apikeyButton');
+            
+            apikeyButton.addEventListener("click", function() {
+              const apikeyPage = '/apikey'; 
+              navigateTo(apikeyPage); 
+            });
   
     return aside;
   }
 
 
-export default menu;
+export default Menu;

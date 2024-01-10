@@ -1,11 +1,20 @@
-import dataset from "../data/dataset.js";
-import { computeStats } from "../lib/dataFunctions.js";
+const Estadisticas = () => {
 
-export const computeStats = (data) => {
-    // Calcula el promedio de podios
-    const podiums = dataset.map((item) => item.extraInfo.podiums);
-    const totalPodiums = podiums.reduce((acc, podium) => acc + podium, 0);
-    const averagePodiums = totalPodiums / dataset.length;
-    const roundedAveragePodiums = averagePodiums.toFixed(2); // Redondea el promedio a dos decimales
-    return Number(roundedAveragePodiums);
-  };
+  const SectionEstadisticas = document.createElement("div");
+  divStats.classList.add("computeStats");
+
+  const estadistica = document.createElement("p");
+  estadistica.textContent = 'Promedio Podios Obtenidos: ';
+  
+  // Usa un elemento span para mostrar el promedio de podios
+  let spanStats = document.createElement("span");
+  spanStats.id = "averagePodiums"; // Cambiado a id en lugar de atributo
+  spanStats.textContent = '--';
+  
+  estadistica.appendChild(spanStats);
+  SectionEstadisticas.appendChild(estadistica);
+  
+  return SectionEstadisticas;
+}
+
+export default Estadisticas;

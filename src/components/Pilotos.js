@@ -1,9 +1,13 @@
+import { navigateTo } from "../router.js"; 
+
 const Piloto =(dataPiloto)=>{
     const li = document.createElement("li");
-      li.classList.add("list"); // Rubi: Agrega la clase "list" (Confirmar porque no funciona)
+      li.classList.add("list"); 
       li.setAttribute("itemscope", "");
       li.setAttribute("itemtype", "PilotsF1");
       li.setAttribute("data-id", dataPiloto.id);
+
+      li.addEventListener("click", () => redirectToDetailView(dataPiloto));
   
       li.innerHTML = `
         <dl class="root-list" itemscope itemtype="PilotsF1">
@@ -15,6 +19,14 @@ const Piloto =(dataPiloto)=>{
         </dl>
       `;
       return li;
-}
+};
+
+// Función para redirigir a la vista 
+const redirectToDetailView = (dataPiloto) => {
+  // URL a la que será redireccionado utilizando id unico
+  const detailViewUrl = `/piloto`;
+  // Redirigir a la vista 
+  navigateTo(detailViewUrl, dataPiloto); // Utilizamos la función navigateTo del router
+};
 
 export default Piloto

@@ -1,34 +1,72 @@
-import Piloto from "../components/Piloto.js";
-import data from "../data/dataset.js";
-import { Header } from "../components/Header.js";
-import { Footer } from "../components/Footer.js";
-import { div_filtros } from "../components/Menu.js";
-import { filterData, sortData, computeStats } from "../lib/dataFunctions.js";
-import { navigateTo } from "../router.js";
+import data from '../data/dataset.js';
+import Piloto from '../components/Pilotos.js';
+import Header from '../components/Header.js';
+import Estadisticas from '../components/Estadisticas.js';
+import Footer from '../components/Footer.js';
+import Menu from '../components/Menu.js';
+import { sortData, filterData, computeStats } from '../lib/dataFunctions.js';
 
+export const HomeLayout = () => {
+    const container = document.createElement('div');
+    container.classList.add("container");
 
-
-const HomeLayout = () => {
-  const container = document.createElement('span')
- //METER HEADER, FILTROS Y ESTADÍSTICAS A UN DIV
- const div_home = document.createElement("div");
- div_home.setAttribute("id", "viewHome");
-
- div_home.appendChild(header());
- div_home.appendChild(div_filtros());
- div_home.appendChild(p_estadisticas());
-
-  // por aqui crear la sidebar
     const ul = document.createElement("ul");
 
-  
-    data.forEach((element) => { 
-      ul.appendChild(Piloto(element));
+      // Función para renderizar tarjetas
+      const renderCards = (drivers) => {
+        ul.innerHTML = '';
+        drivers.forEach((driver) => {
+            ul.appendChild(Piloto(driver));
+        });
+    };
+
+    // Inicializar con todos los datos
+    let currentData = [...data];
+    renderCards(currentData);
+
+    container.append(Header(), Menu(), Estadisticas(), ul, Footer());
+
+    // Ordenar
+    const ordenar = container.querySelector('#sort-order');
+    ordenar.addEventListener('change', (e) => {
+        const dataOrdenada = sortData(currentData, 'name', e.target.value);
+        renderCards(dataOrdenada);
+        updateStats(dataOrdenada);
     });
 
-    container.append(ul) // aqui agregas la sidebar
-  
+    // Filtrar
+    const filtro = container.querySelector('#select-filter');
+    filtro.addEventListener('change', (e) => {
+        const selectedValue = e.target.value;
+        if (selectedValue === "Todos") {
+            currentData = [...data];
+        } else {
+            currentData = filterData(data, "lastTeam", selectedValue);
+        }
+        const dataOrdenada = sortData(currentData, ordenar.value);
+        renderCards(dataOrdenada);
+        updateStats(dataOrdenada);
+    });
+
+       // Función para actualizar estadísticas
+       const updateStats = (drivers) => {
+        // Calcula el promedio de podiums utilizando la función computeStats
+        const averagePodiumsElement = document.getElementById("averagePodiums");
+        
+        if (averagePodiumsElement) {
+            const averagePodiums = computeStats(drivers);
+            averagePodiumsElement.textContent = averagePodiums;
+        }
+    };
+    
+    // Borrar
+    const clearButton = container.querySelector('[data-testid="button-clear"]');
+    clearButton.addEventListener('click', () => {
+        filtro.value = "Todos";
+        currentData = [...data];
+        renderCards(currentData);
+        updateStats(currentData);
+    });
+
     return container;
-  };
-  
-  export default HomeLayout;
+};
