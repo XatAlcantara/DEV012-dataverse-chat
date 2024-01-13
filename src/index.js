@@ -11,7 +11,7 @@ import { setRootElement, setRoutes, onURLChange } from "./router.js";
 //Debemos definir las vistas asociadas a cada carpeta que mencionamos en views 
 const routes = {
   "/": Home,
- "/error404": Error404,
+ "/Error404": Error404,
   "/apykey": ApyKey,
   "/piloto": Piloto,
 };

@@ -20,3 +20,5 @@ export const Error404 = () => {
 
   return ErrorText;
 };
+
+export default Error404;

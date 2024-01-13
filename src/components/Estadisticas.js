@@ -1,7 +1,7 @@
 const Estadisticas = () => {
 
   const SectionEstadisticas = document.createElement("div");
-  divStats.classList.add("computeStats");
+  SectionEstadisticas.classList.add("computeStats");
 
   const estadistica = document.createElement("p");
   estadistica.textContent = 'Promedio Podios Obtenidos: ';

@@ -6,7 +6,7 @@ import Footer from '../components/Footer.js';
 import Menu from '../components/Menu.js';
 import { sortData, filterData, computeStats } from '../lib/dataFunctions.js';
 
-export const HomeLayout = () => {
+export const Home= () => {
     const container = document.createElement('div');
     container.classList.add("container");
 

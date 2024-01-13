@@ -1,6 +1,6 @@
 import { navigateTo } from "../router.js"; 
 
-export const Apykey = () => {
+export const ApyKey= () => {
     const ingresApykey = document.createElement("div");
     ingresApykey.classList.add("Apykey");
     ingresApykey.innerHTML = `
@@ -13,11 +13,13 @@ export const Apykey = () => {
     <button class="clearButtom">Borrar</button>
     `;
   
-   // const errorReturn = ErrorText.querySelector('.errorButton');
-    //errorReturn.addEventListener("click", function() {
-      //const returnHome = `/`; 
-      //navigateTo(returnHome); 
-    //});
+   const errorReturn = ErrorText.querySelector('.errorButton');
+    errorReturn.addEventListener("click", function() {
+      const returnHome = `/`; 
+      navigateTo(returnHome); 
+    });
   
-    //return ErrorText;
-  };
+    return ingresApykey;
+  }
+
+  export default ApyKey;

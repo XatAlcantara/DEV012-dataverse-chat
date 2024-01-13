@@ -39,19 +39,16 @@ const Menu = () => {
             </select>
 
             <button data-testid="button-clear">Eliminar</button>
-            </div>
-            
-            <div class= "Butones">
-            ${Button(nav).outerHTML}
-            </div>`;
+            </div>`
+            ;
 
 
-            const apikeyButton = document.querySelector('.apikeyButton'); // Cambiado de nav a document
+            // const apikeyButton = document.querySelector('.apikeyButton'); // Cambiado de nav a document
 
-            apikeyButton.addEventListener("click", function() {
-                const apikeyPage = '/apikey';
-                navigateTo(apikeyPage);
-            });
+            // apikeyButton.addEventListener("click", function() {
+            //     const apikeyPage = '/apikey';
+            //     navigateTo(apikeyPage);
+            // });
         
             return aside;
         }

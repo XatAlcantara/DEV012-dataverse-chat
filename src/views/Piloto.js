@@ -1,6 +1,6 @@
 import { navigateTo } from "../router.js"; 
 
-const Piloto =(dataPiloto)=>{
+export const Piloto =(dataPiloto)=>{
     const li = document.createElement("li");
       li.classList.add("list"); 
       li.setAttribute("itemscope", "");
@@ -28,5 +28,3 @@ const redirectToDetailView = (dataPiloto) => {
   // Redirigir a la vista 
   navigateTo(detailViewUrl, dataPiloto); // Utilizamos la función navigateTo del router
 };
-
-export default Piloto

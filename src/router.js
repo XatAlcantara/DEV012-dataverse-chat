@@ -1,4 +1,3 @@
-
 let ROUTES = {};
 let rootElement = "";
 
@@ -9,7 +8,7 @@ export const setRootElement = (newRouteElementValue) => {
 export const setRoutes = (newRoutesValue) => {
   // optional Throw errors if routes isn't an object
   if (typeof newRoutesValue === "object") {
-    if (newRoutesValue["/NotFound"]) {
+    if (newRoutesValue["/Error404"]) {
       ROUTES = newRoutesValue;
     }
   }
@@ -25,7 +24,7 @@ const renderView = (pathname, props = {}) => {
     const template = ROUTES[pathname]({ ...props, id });
     root.appendChild(template);
   } else {
-    root.appendChild(ROUTES["/NotFound"](props));
+    root.appendChild(ROUTES["/Error404"](props));
   }
 };
 
