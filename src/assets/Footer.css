@@ -1,21 +1,11 @@
-.container {
-    display: flex;
-}
-
-.computeStats {
+.footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #37353588;
+    height: 10%; 
+    background-color: var(--red-color);
     color: var(--white-color);
     text-align: center;
-    font-size: 1.1em;
     max-height: 100px;
     width: 100%;
-} 
-
-
-#root {
-    width: 100%;
-    overflow: auto;
 }

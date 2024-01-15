@@ -6,7 +6,9 @@ const Menu = () => {
     aside.id = "menu"; // Cambiado de class a id
     aside.innerHTML = `
   
-    <div class="Labels"></div>
+    <div class="noWidth cajaMenu">
+    <aside class="menu" >
+   
     <label for="select-filter">Filtra por:</label>
     <select id="select-filter" data-testid="select-filter" name="lastTeam">
               <option value="Todos">Escuderias</option>

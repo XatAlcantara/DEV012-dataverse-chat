@@ -15,16 +15,19 @@ export const Home= () => {
       // Función para renderizar tarjetas
       const renderPilotos = (drivers) => {
         ul.innerHTML = '';
+        ul.appendChild(Header())
+        ul.appendChild(Estadisticas())
         drivers.forEach((driver) => {
             ul.appendChild(Piloto(driver));
         });
+        ul.appendChild(Footer())
     };
 
     // Inicializar con todos los datos
     let currentData = [...data];
     renderPilotos(currentData);
 
-    container.append(Header(), Menu(), Estadisticas(), ul, Footer());
+    container.append(Menu(), ul);
 
     // Ordenar
     const ordenar = container.querySelector('#sort-order');

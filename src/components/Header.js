@@ -7,9 +7,10 @@ export const Header = () => {
 
     header.id = "header"; // Cambiado de class a id
     header.innerHTML = `
-        <img src="./images/LOGOS-1_1200x1200-PhotoRoom.png" id="logo" class="logo"> <!-- Cambiado de class a id -->
+        <i class="fa-solid fa-house fa-lg" style="color: #ffffff;"></i> <!-- Cambiado de class a id --> 
         <h1 id="title" class="title">F1'Verse</h1> <!-- Cambiado de class a id -->
-        <i id="house-icon" class="fa-solid fa-house"></i> <!-- Cambiado de class a id -->
+        <img src="https://github.com/XatAlcantara/DEV012-dataverse-chat/blob/main/src/images/Logo-blanco-f1.png?raw=true" id="logo" class="logo"> <!-- Cambiado de class a id -->
+        
     `;
 
     const logo = header.querySelector('#logo'); // Cambiado de class a id

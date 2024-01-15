@@ -1,0 +1,25 @@
+#header { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10%; 
+    background-color: var(--red-color);
+    color: var(--white-color);
+    text-align: center;
+    font-size: 1.2em;
+    max-height: 100px;
+    width: 100%;
+
+}
+
+#logo {
+    width: 10%;
+    height: 8% ;
+}
+
+.fa-solid {
+    width: 20%;
+    height: 8%;
+    font-size: 1.2em; 
+}
+

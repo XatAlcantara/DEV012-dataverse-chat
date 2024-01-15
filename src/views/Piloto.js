@@ -17,7 +17,11 @@ export const Piloto =(dataPiloto)=>{
           <dt></dt><dd itemprop="lastTeam">${dataPiloto.facts.lastTeam}</dd>
           <dt></dt><dd itemprop="championshipsWon">Campeonatos: ${dataPiloto.extraInfo.championshipsWon}</dd>
         </dl>
-      `;
+        <div>
+      <textarea id="mensajeTextarea" placeholder="Escribe tu mensaje..."></textarea>
+      <button id="enviarMensajeBtn">Enviar Mensaje</button>
+    </div>
+  `;
       return li;
 };
 
