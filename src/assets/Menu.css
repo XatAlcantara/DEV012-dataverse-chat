@@ -1,58 +1,76 @@
 /* Aside */
 #menu {
-    width: 20%;
-    position: -webkit-sticky; 
+    width: 18%;
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     left: 0;
-}
 
+}
 .cajaMenu {
     background: var(--grey-color);
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center; 
-    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 
 }
 
 .cajaMenu .menu {
-        width: 75%; 
-        height: 85%;
-        background: var(--white-color); 
-        color: var(--black-color); 
-        padding: 30px 25px; 
-        margin-bottom: 0;
+    width: 75%;
+    height: 85%;
+    background: var(--white-color);
+    color: var(--black-color);
+    padding: 30px 25px;
+    margin-bottom: 0;
+}
+
+.cajaMenu .menu .seccionSelect {
+    margin-top: 0.5em;
 }
 
 .cajaMenu .menu label {
-            margin-bottom: 25px;
-            margin-top: 15px;
+    margin-bottom: 25px;
+    margin-top: 15px;
 
-        }
+}
+
 .cajaMenu .menu select {
-            width: 100%;
-            margin-bottom: 15px;
-            background-color: var(--red-color);
-            color: var(--white-color);
-            border: none;
-            padding: 10px 15px;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-        .cajaMenu .menu button {
-            width:100%;
-            background-color: var(--grey-color);
-            color: var(--white-color);
-            border: none;
-            padding: 10px 5px;
-            border-radius: 15px;
-            cursor: pointer;
-            align-items: center;
-            margin-top:40px;
-        }
+    width: 100%;
+    margin-bottom: 15px;
+    background-color: var(--red-color);
+    color: var(--white-color);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.cajaMenu .menu button {
+    width: 100%;
+    background-color: var(--grey-color);
+    color: var(--white-color);
+    border: none;
+    padding: 10px 5px;
+    border-radius: 15px;
+    cursor: pointer;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.cajaMenu .menu .apypkeyButton {
+    width: 100%;
+    background-color: var(--miColor, #37353588);
+    color: var(--white-color);
+    border: none;
+    padding: 10px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    align-items: center;
+    margin-top: 22em;
+}
+
 .cajaMenu .menu button:hover {
-            box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.2);
-            font-weight: bold;
-        }
+    box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}

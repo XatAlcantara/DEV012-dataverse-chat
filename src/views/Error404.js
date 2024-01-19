@@ -1,22 +1,23 @@
-import { navigateTo } from "../router.js"; 
+import Header from '../components/Header.js';
+import Footer from '../components/Footer.js';
 
 export const Error404 = () => {
   const ErrorText = document.createElement("div");
   ErrorText.classList.add("ErrorText");
   ErrorText.innerHTML = `
-  <h1 class="titleError">Error 404</h1>
-  <h2 class="subtitleError">Pagina no encontrada</h2>
-  <p class="textMessage"> Lo sentimos, estamos trabajando para solucionarlo </p>
-  <img src="https://github.com/XatAlcantara/DEV012-dataverse-chat/blob/main/src/images/Guido-error404.png?raw=true class="reparacion">
-  
-  <button class="errorButton">Volver al inicio</button>
+  <div class="errorContainer">
+    <div class="textContainer">
+      <h1 id="tituloError" class="titleError">Error 404</h1>
+      <h2 class="subtitleError">Pagina no encontrada</h2>
+      <p class="textMessage"> Lo sentimos, estamos trabajando para solucionarlo </p>
+    </div>
+    <img id="guido" src="/images/Guido-error.png" class="reparacion">
+  </div>
   `;
-
-  const errorReturn = ErrorText.querySelector('.errorButton');
-  errorReturn.addEventListener("click", function() {
-    const returnHome = `/`; 
-    navigateTo(returnHome); 
-  });
+  
+  const titleError = ErrorText.querySelector(".errorContainer");
+  ErrorText.insertBefore(Header(), titleError);
+  titleError.insertAdjacentElement("afterend", Footer());
 
   return ErrorText;
 };

@@ -1,0 +1,146 @@
+.pilotoContainer{
+  display:flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+.primeraInfo{
+width: 55%;
+height: 100%; 
+}
+.chat-container{
+width: 45%;
+}
+.primeraInfo{
+  display: flex;
+  flex-direction: column; 
+}
+#fotoPiloto, .infoPrincipal{
+  width: 50%;
+  height: 100%;  
+}
+.name{
+  font-family: 'Montserrat', sans-serif;
+  background-color: #D9D9D9;
+  color: #3E3636;
+  text-align: center;
+  margin: 0.5;
+  font-size: 2em;
+  font-weight: bold;
+  width: 60%;
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+  border-radius: 8px;
+  margin-left: 4em;
+}
+.contenedor2{
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin-left: 3em;
+}
+#fotoPiloto{
+  width: 280px;
+  height: 300px;
+  margin: 2em;
+}
+.infoPrincipal{
+  display: flex;
+  flex-direction: column;
+  font-family: 'Lato', sans-serif;
+  color: #3E3636;
+  margin-top: 5em;
+  font-size: 18px;
+  padding-right: 2em;
+}
+.description{
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+  padding-left: 4em;
+  padding-right: 4em;
+  text-align: justify;
+  font-size: 1em;
+
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .contenedorMensajes{
+    border-radius: 10px;
+    width: 560px;
+    height: 450px;
+    border: rgba(174, 79, 174, 0.6);
+    border-width: 12px 12px;
+    background-color: rgba(174, 79, 174, 0.6);
+    padding: 1em;
+    margin-top: 0.3em;
+    margin-left: 0.5em;
+  }
+#enviarMensajeBtn{
+  background-color: var(--red-color);
+  border: none var(--red-color);
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+  padding-left: 3em;
+  padding-right: 3em;
+  font-size: 1em;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 1em;
+  margin-right: 2em;
+  margin-left: 6em;
+  margin-bottom: 0.4em;
+  border-radius: 1em;
+  color: var(--white-color);
+  width: 60%;
+}
+  .textoChat{
+    align-items: center;
+    color: black;
+    font-size: 1.4em;
+    font-family: 'Lato', sans-serif;
+    padding:0.5em;
+    margin-left: 7em;
+    margin-top: 1em;
+    margin-bottom: 0em;
+  }
+    #mensajeTextarea{
+    border-color: #D9D9D9;
+    border-radius: 10px;
+    font-size: 1em;
+    border-width: 8px 8px;
+    width: 500px; 
+    height: 60px;
+    margin-top:1em;
+    margin-left: 3em;
+    align-items: center;
+  }
+  
+  #chat {
+    overflow-y: auto;
+    max-height: 200px;
+    background-color: var(--gray-color);
+    border: #3E3636;
+  }
+  
+  .piloto-message {
+    background-color: #e0e0e0;
+    align-self: flex-start;
+    padding: 8px;
+    border-radius: 8px;
+    margin: 0;
+    max-width: 90%;
+  }
+  
+  .user-message {
+    background-color: #4caf50;
+    color: #fff;
+    align-self: flex-end;
+    padding: 8px;
+    border-radius: 8px;
+    margin: 0;
+    max-width: 90%;
+  }
+

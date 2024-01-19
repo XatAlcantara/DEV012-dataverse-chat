@@ -1,0 +1,49 @@
+.ErrorText{
+    width: 100%;
+    display: flex; /* Cambiado de flex a block */
+    flex-direction: column;
+}
+.errorContainer{
+    height: 100%;
+    width: 85%;
+    margin:0 auto;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center; 
+      
+} 
+.textContainer, #guido{
+    width: 50%;
+    height: 85%;
+    padding-bottom: 4em;
+    padding-top: 2.5em;
+}
+.textContainer{
+    font-family: 'Montserrat', sans-serif;
+}
+#tituloError{
+    font-size: 7em;
+    font-family: 'Montserrat', sans-serif;
+    align-items: center;
+    color: #D72323;
+    font-weight: bold;
+
+}
+.subtitleError{
+    font-size: 3em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    margin-bottom: 1em;
+
+}
+.textMessage{
+    font-size: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 1em;
+    text-align: center;
+}
+#reparacion {
+    width: 120px;
+    height: 120px;
+}
+

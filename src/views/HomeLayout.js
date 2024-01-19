@@ -13,12 +13,12 @@ export const Home= () => {
     const ul = document.createElement("ul");
 
       // Función para renderizar tarjetas
-      const renderPilotos = (drivers) => {
+      const renderPilotos = (dataPiloto) => {
         ul.innerHTML = '';
         ul.appendChild(Header())
         ul.appendChild(Estadisticas())
-        drivers.forEach((driver) => {
-            ul.appendChild(Piloto(driver));
+        dataPiloto.forEach((dataPiloto) => {
+            ul.appendChild(Piloto(dataPiloto));
         });
         ul.appendChild(Footer())
     };
@@ -52,12 +52,12 @@ export const Home= () => {
     });
 
        // Función para actualizar estadísticas
-       const updateStats = (drivers) => {
+       const updateStats = (dataPiloto) => {
         // Calcula el promedio de podiums utilizando la función computeStats
         const averagePodiumsElement = document.getElementById("averagePodiums");
         
         if (averagePodiumsElement) {
-            const averagePodiums = computeStats(drivers);
+            const averagePodiums = computeStats(dataPiloto);
             averagePodiumsElement.textContent = averagePodiums;
         }
     };

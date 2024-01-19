@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10%; 
+    height: 5%; 
     background-color: var(--red-color);
     color: var(--white-color);
     text-align: center;
