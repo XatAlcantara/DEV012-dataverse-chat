@@ -1,5 +1,5 @@
-import Header from '../components/Header.js';
-import Footer from '../components/Footer.js';
+import Header from "../components/Header.js";
+import Footer from "../components/Footer.js";
 
 export const Error404 = () => {
   const ErrorText = document.createElement("div");
@@ -14,7 +14,7 @@ export const Error404 = () => {
     <img id="guido" src="/images/Guido-error.png" class="reparacion">
   </div>
   `;
-  
+
   const titleError = ErrorText.querySelector(".errorContainer");
   ErrorText.insertBefore(Header(), titleError);
   titleError.insertAdjacentElement("afterend", Footer());

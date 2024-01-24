@@ -1,9 +1,9 @@
 export const Footer = () => {
-    const footer = document.createElement("footer");
-    footer.classList.add("footer");
-    footer.innerHTML = "Desarrollado por Xatzibe Alcantara";
-  
-    return footer;
-  };
+  const footer = document.createElement("footer");
+  footer.classList.add("footer");
+  footer.innerHTML = "Desarrollado por Xatzibe Alcantara";
 
-  export default Footer;
+  return footer;
+};
+
+export default Footer;

@@ -1,11 +1,11 @@
 import { componentePeticion } from "../lib/Peticiones.js";
-import Header from '../components/Header.js';
-import Footer from '../components/Footer.js';
+import Header from "../components/Header.js";
+import Footer from "../components/Footer.js";
 
 export const Piloto = (dataPiloto) => {
-  const seccion = document.createElement('section');
-  const contenedor = document.createElement('div');
-  contenedor.classList.add('piloto-container');
+  const seccion = document.createElement("section");
+  const contenedor = document.createElement("div");
+  contenedor.classList.add("piloto-container");
   contenedor.setAttribute("itemscope", "");
   contenedor.setAttribute("itemtype", "PilotsF1");
   contenedor.setAttribute("data-id", dataPiloto.id);
@@ -39,25 +39,24 @@ export const Piloto = (dataPiloto) => {
         </div>
     </div>
   `;
-  
-  
+
   const buttonEnviar = contenedor.querySelector("#enviarMensajeBtn");
   const mensajeUsuario = contenedor.querySelector("#mensajeTextarea");
-  
+
   buttonEnviar.addEventListener("click", () => {
     componentePeticion(dataPiloto, mensajeUsuario.value)
       .then((res) => res.json())
       .then((data) => {
-        const article = contenedor.querySelector('article#chat')
-        const pPiloto = document.createElement('p')
-        const pUser = document.createElement('p')
+        const article = contenedor.querySelector("article#chat");
+        const pPiloto = document.createElement("p");
+        const pUser = document.createElement("p");
 
-        pPiloto.classList.add('piloto-message');
-        pUser.classList.add('user-message');
+        pPiloto.classList.add("piloto-message");
+        pUser.classList.add("user-message");
 
-        pPiloto.textContent = data.choices[0].message.content
-        pUser.textContent = mensajeUsuario.value
-        article.append(pUser, pPiloto)
+        pPiloto.textContent = data.choices[0].message.content;
+        pUser.textContent = mensajeUsuario.value;
+        article.append(pUser, pPiloto);
         mensajeUsuario.value = "";
       });
   });

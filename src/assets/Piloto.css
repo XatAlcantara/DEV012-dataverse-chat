@@ -66,15 +66,14 @@ width: 45%;
 .chat-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
   }
   .contenedorMensajes{
     border-radius: 10px;
     width: 560px;
     height: 450px;
-    border: rgba(174, 79, 174, 0.6);
+    border: rgba(107, 96, 107, 0.6);
     border-width: 12px 12px;
-    background-color: rgba(174, 79, 174, 0.6);
+    background-color: rgba(107, 96, 107, 0.6);
     padding: 1em;
     margin-top: 0.3em;
     margin-left: 0.5em;
@@ -84,14 +83,14 @@ width: 45%;
   border: none var(--red-color);
   padding-top: 0.6em;
   padding-bottom: 0.6em;
-  padding-left: 3em;
-  padding-right: 3em;
+  padding-left: 2em;
+  padding-right: 2em;
   font-size: 1em;
   font-family: 'Montserrat', sans-serif;
   margin-top: 1em;
   margin-right: 2em;
   margin-left: 6em;
-  margin-bottom: 0.4em;
+  margin-bottom: 0.6em;
   border-radius: 1em;
   color: var(--white-color);
   width: 60%;
@@ -130,8 +129,9 @@ width: 45%;
     align-self: flex-start;
     padding: 8px;
     border-radius: 8px;
-    margin: 0;
+    margin-bottom: 0.5em;
     max-width: 90%;
+
   }
   
   .user-message {

@@ -2,9 +2,9 @@ import { navigateTo } from "../router.js";
 //import { ApyKey } from "../views/ApyKey.js";
 
 const Menu = () => {
-    const aside = document.createElement("aside");
-    aside.id = "menu"; 
-    aside.innerHTML = `
+  const aside = document.createElement("aside");
+  aside.id = "menu";
+  aside.innerHTML = `
   
     <div class="noWidth cajaMenu">
     <aside class="menu">
@@ -49,14 +49,14 @@ const Menu = () => {
 
           
           
-            `
-            const apyButtom = aside.querySelector('.apypkeyButton'); // Cambiado de class a id
-            apyButtom.addEventListener("click", function () {
-              console.log('hola')
-                const returnApykey = `/apykey`;
-                navigateTo(returnApykey);
-              });
-            return aside;
-        }
-        
-        export default Menu;
+            `;
+  const apyButtom = aside.querySelector(".apypkeyButton"); // Cambiado de class a id
+  apyButtom.addEventListener("click", function () {
+    console.log("hola");
+    const returnApykey = `/apykey`;
+    navigateTo(returnApykey);
+  });
+  return aside;
+};
+
+export default Menu;
